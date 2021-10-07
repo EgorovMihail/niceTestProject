@@ -1,0 +1,723 @@
+@font-face {
+  font-family: "Poppins__ExtraBold";
+  src: url("../fonts/Poppins-ExtraBold.woff2") format("woff2"),
+    url("../fonts/Poppins-ExtraBold.woff") format("woff"),
+    url("../fonts/Poppins-ExtraBold.ttf") format("truetype"),
+    url("../fonts/Poppins-ExtraBold.svg#Poppins-ExtraBold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins__Regular";
+  src: url("../fonts/Poppins-Regular.woff2") format("woff2"),
+    url("../fonts/Poppins-Regular.woff") format("woff"),
+    url("../fonts/Poppins-Regular.ttf") format("truetype"),
+    url("../fonts/Poppins-Regular.svg#Poppins-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins__Bold";
+  src: url("../fonts/Poppins-Bold.woff2") format("woff2"),
+    url("../fonts/Poppins-Bold.woff") format("woff"),
+    url("../fonts/Poppins-Bold.ttf") format("truetype"),
+    url("../fonts/Poppins-Bold.svg#Poppins-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins__SemiBold";
+  src: url("../fonts/Poppins-SemiBold.woff2") format("woff2"),
+    url("../fonts/Poppins-SemiBold.woff") format("woff"),
+    url("../fonts/Poppins-SemiBold.ttf") format("truetype"),
+    url("../fonts/Poppins-SemiBold.svg#Poppins-SemiBold") format("svg");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+// переменные цветов
+@btn__color: #fbc508;
+@text__color: #363636;
+@header__text: #2b0955;
+@dark__text: #000000;
+@light__text: #ffffff;
+@bg__color: #ffffff;
+
+// переменные шрифтов
+.eBold() {
+  font-family: "Poppins__ExtraBold", sans-serif;
+}
+.reg() {
+  font-family: "Poppins__Regular", sans-serif;
+}
+.bold() {
+  font-family: "Poppins__Bold", sans-serif;
+}
+.sBold() {
+  font-family: "Poppins__SemiBold", sans-serif;
+}
+/* ===== Базове настройки ====== */
+
+body {
+  .reg();
+  font-size: 14px;
+  color: @text__color;
+  overflow-x: hidden;
+}
+* {
+  box-sizing: border-box;
+}
+button,
+input,
+a,
+textarea {
+  outline: none;
+  cursor: pointer;
+}
+
+.light__button {
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  background-color: @btn__color;
+  color: @header__text;
+}
+.footer__navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0, 0, 0, 1);
+}
+.main-media {
+  margin-right: 120px;
+  &__img-header:hover path {
+    fill: #2a0953;
+  }
+  &__footer {
+    margin-right: 0;
+  }
+  &__link {
+    margin-right: 20px;
+  }
+  &__link:last-child {
+    margin-right: 0px;
+  }
+  &__footer-centr {
+    display: flex;
+    align-self: center;
+  }
+}
+
+.section__header {
+  position: relative;
+  .bold();
+  font-size: 24px;
+  line-height: 36px;
+  color: @header__text;
+  margin-bottom: 45px;
+}
+.section__header::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100px;
+  background: @btn__color;
+  height: 3px;
+}
+.nav {
+  z-index: 100;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+  color: @header__text;
+}
+a:hover {
+  color: @header__text;
+}
+
+.secaoQuemSomos {
+  height: 532px;
+  &__img {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.main-content {
+  height: 460px;
+  background-color: @header__text;
+  padding-top: 60px;
+  position: relative;
+  &__img {
+    overflow: hidden;
+    position: absolute;
+    left: -150px;
+    top: -120px;
+    width: 650px;
+    height: 650px;
+  }
+}
+.main-title {
+  &__header {
+    .eBold();
+    font-size: 64px;
+    line-height: 88px;
+    color: @light__text;
+  }
+  &__subtitle {
+    .reg();
+    font-size: 18px;
+    line-height: 27px;
+    color: @light__text;
+    margin-top: 22px;
+    margin-bottom: 26px;
+
+    &-strong {
+      .bold();
+      color: @btn__color;
+    }
+  }
+  &__button__use {
+    width: 186px;
+    height: 46px;
+    margin-right: 16px;
+    border: none;
+    border-radius: 8px;
+    .sBold();
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    font-weight: 600;
+  }
+  &__button__use:hover {
+    background-color: #e5b300;
+  }
+  &__button__learn {
+    width: 169px;
+    height: 46px;
+    border: 1px solid @light__text;
+    border-radius: 8px;
+    background-color: inherit;
+    .sBold();
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    font-weight: 600;
+    color: @light__text;
+  }
+  &__button__learn:hover {
+    background-color: #e5b300;
+  }
+}
+
+.startups {
+  padding-top: 125px;
+  &__header {
+    text-align: center;
+  }
+  &__subtaitle {
+    .reg();
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+  }
+}
+.startups-slider {
+  margin-top: 120px;
+}
+
+.slick-slide {
+  width: 287px;
+  height: 400px;
+  margin: 0 25px;
+  padding-top: 50px;
+}
+.slick-slide:last-child {
+  margin-right: 0;
+}
+
+.slider-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  width: 287px;
+  height: 306px;
+  padding: 120px 24px 25px 30px;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0px 9px 27px rgba(0, 0, 0, 0.1);
+
+  &__img {
+    position: absolute;
+    top: -64px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 171px;
+    height: 178px;
+  }
+  &__title {
+    .bold();
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 15px;
+    color: @dark__text;
+  }
+  &__subtitle {
+    .reg();
+    font-size: 16px;
+    line-height: 24px;
+  }
+  &__button {
+    position: absolute;
+    right: 26px;
+    bottom: 26px;
+    width: 25px;
+    height: 25px;
+    background-color: #7000ff;
+    color: @light__text;
+    border: none;
+    border-radius: 50%;
+    .sBold();
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+.slider-item:last-child {
+  margin-right: 0;
+}
+
+.secaoQuemSomos {
+  margin-top: 10px;
+
+  &__content {
+    margin-top: 130px;
+  }
+  &__hashtag {
+    font-size: 16px;
+    line-height: 24px;
+    color: #7000ff;
+    margin-bottom: 20px;
+  }
+  &__title {
+    .bold();
+    font-size: 36px;
+    line-height: 54px;
+    color: @header__text;
+    margin-bottom: 30px;
+  }
+  &__subtitle {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 40px;
+    &-strong {
+      .bold();
+      color: #7000ff;
+      line-height: 24px;
+    }
+  }
+  &__button {
+    width: 186px;
+    height: 46px;
+    .sBold();
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  &__button:hover {
+    background-color: #e5b300;
+  }
+}
+
+.appeal {
+  margin-top: 190px;
+
+  &__img {
+    margin-top: 35px;
+    margin-bottom: 15px;
+  }
+  &-title {
+    &__img {
+      margin-right: 15px;
+    }
+    &__text {
+      .sBold();
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 35px;
+      &-email {
+        .bold();
+      }
+      &-strong {
+        .bold();
+        color: #7000ff;
+      }
+      &-appeal {
+        position: relative;
+        .sBold();
+        font-size: 16px;
+        line-height: 24px;
+        color: #7000ff;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+
+  &__lable {
+    .reg();
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 14px;
+    line-height: 21px;
+    color: #7000ff;
+  }
+  &__input {
+    width: 400px;
+    height: 40px;
+    padding: 8px 15px 8px 16px;
+    margin-bottom: 16px;
+    border: 1px solid #ae97cb;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #2a0953;
+  }
+  &__input:focus {
+    border-color: #7000ff;
+  }
+  &__button {
+    width: 186px;
+    height: 46px;
+    margin-bottom: 35px;
+    .sBold();
+    font-weight: 600;
+  }
+  &__button:hover {
+    background-color: #e5b300;
+  }
+}
+.form__button__wrap {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.footer {
+  padding: 40px 0 30px 0;
+  background-color: @header__text;
+
+  &__nav {
+    margin-bottom: 70px;
+  }
+  &__lable {
+    align-self: center;
+    line-height: 21px;
+    color: @light__text;
+    margin-right: 35px;
+  }
+  &__wrap {
+    border: 1px solid @bg__color;
+    border-radius: 6px;
+    &__inpyt {
+      width: 245px;
+      height: 45px;
+      padding: 12px 0 12px 16px;
+      color: @light__text;
+      background-color: inherit;
+      border-bottom-left-radius: 6px;
+      border-top-left-radius: 6px;
+      border: none;
+    }
+    &__button {
+      width: 125px;
+      height: 45px;
+      border: none;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      background-color: @bg__color;
+      color: @header__text;
+    }
+  }
+  &__line {
+    left: 0;
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background-color: @light__text;
+  }
+  &__text {
+    margin-top: 16px;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    color: @light__text;
+  }
+  &__form {
+    display: flex;
+    flex-direction: row;
+  }
+}
+.row_footer__form {
+  margin-bottom: 60px;
+}
+.navbar-nav .nav-link {
+  color: rgb(255, 255, 255);
+}
+.form__input__popup {
+  width: 400px;
+  height: 40px;
+  padding: 8px 15px 8px 16px;
+  margin-bottom: 16px;
+  border: 1px solid #ae97cb;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #2a0953;
+}
+
+.popup {
+  display: none;
+  position: relative;
+  z-index: 1000;
+  padding-top: 10%;
+
+  &-active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(238, 231, 231, 0.7);
+  }
+
+  &__dialog {
+    width: 590px;
+    height: 485px;
+    padding: 55px 95px 55px 95px;
+    border-radius: 20px;
+    position: relative;
+    background-color: @bg__color;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    &-close {
+      position: absolute;
+      right: 30px;
+      top: -5px;
+      width: 25px;
+      height: 25px;
+      border: none;
+      cursor: pointer;
+      color: #ae96cb;
+      background-color: inherit;
+      .reg();
+      font-size: 50px;
+    }
+  }
+
+  &-title {
+    .bold();
+    font-size: 36px;
+    color: #2a0953;
+    margin-bottom: 25px;
+    text-align: start;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1400px) {
+  .main-title {
+    &__header {
+      font-size: 52px;
+    }
+    &__subtitle {
+      margin-top: 15px;
+      font-size: 18px;
+      &-strong {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .main-media {
+    margin-right: 32px;
+  }
+}
+@media (max-width: 990px) {
+  .main-title {
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 840px) {
+  .main-title {
+    &__header {
+      font-size: 48px;
+    }
+    &__subtitle {
+      margin-top: 15px;
+      font-size: 18px;
+
+      &-strong {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    height: 900px;
+  }
+  .main-content__img {
+    left: -150px;
+    top: -270px;
+    width: 100%;
+    height: auto;
+  }
+  .main-title__button__wrap {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 700px) {
+  .main-content__img {
+    left: -120px;
+    top: -250px;
+    width: 600px;
+    height: 600px;
+  }
+  .form {
+    width: 310px;
+    &__input {
+      width: 310px;
+    }
+  }
+}
+@media (max-width: 766px) {
+  .footer__navbar {
+    flex-direction: column;
+  }
+
+  .logo__img-white {
+    margin-bottom: 80px;
+  }
+  .main-media__footer-centr {
+    display: flex;
+    align-self: flex-start;
+  }
+  .footer__wrap {
+    &__inpyt {
+      width: 200px;
+    }
+    &__button {
+      width: 100px;
+    }
+  }
+  .footer__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer__lable {
+    align-self: flex-start;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 990px) {
+  .secaoQuemSomos {
+    &__img {
+      position: absolute;
+      right: 0;
+      top: 80px;
+      width: 490px;
+      height: 400px;
+    }
+  }
+  .appeal-title {
+    margin-bottom: 55px;
+  }
+}
+
+@media (max-width: 765px) {
+  .secaoQuemSomos {
+    height: 864px;
+    &__img {
+      right: -100px;
+      top: 0;
+      width: 97%;
+      height: auto;
+    }
+  }
+  .popup {
+    &__content-title {
+      text-align: center;
+    }
+    &__dialog {
+      width: 375px;
+      height: 485px;
+      padding: 50px 15px 50px 15px;
+    }
+  }
+  .form__input__popup {
+    width: 340px;
+  }
+  .form__button {
+    width: 340px;
+  }
+}
+@media (max-width: 520px) {
+  .popup {
+    padding-top: 0px;
+
+    &-active {
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      top: 0px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(238, 231, 231, 0.7);
+    }
+  }
+}
+@media (max-width: 480px) {
+  .slider-item {
+    width: 240px;
+    height: 290px;
+    padding: 120px 20px 25px 25px;
+  }
+  .slider-item__button {
+    right: 15px;
+    bottom: 15px;
+  }
+}
